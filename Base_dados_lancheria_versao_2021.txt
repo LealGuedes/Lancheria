@@ -1,0 +1,63 @@
+create database lancheria2021 default character set utf8 default collate utf8_general_ci;
+
+/****tabela usuarios****/ 
+create table usuarios(
+
+codigo int not null AUTO_INCREMENT, 
+nome varchar(255) not null,
+email varchar(255) not null,
+senha char(8) not null,
+endereco varchar(255) not null,
+tipo enum('usu','fun','adm'),
+primary key(codigo)
+ 
+)default charset=utf8;
+******************************************************************
+***tabela categoria***/
+
+create table categorias(
+
+codigoCategoria int not null AUTO_INCREMENT,
+descricao varchar(255) not null,
+primary key(codigoCategoria)
+)default charset=utf8;
+
+***********************************************************************
+/***tabela lancheria***/
+
+create table lanches(
+codigoLanche int not null AUTO_INCREMENT,
+categoria int not null,
+nomeLanche varchar(255) not null,
+preco float not null,
+ingredientes varchar(555) not null,
+estoque int not null,
+primary key(codigoLanche),
+foreign key(categoria)references categorias(
+codigoCategoria)
+)default charset=utf8;
+
+
+/***tabela pedido***/
+
+create table pedidos(
+
+lanche int not null AUTO_INCREMENT,
+usuario int not null AUTO_INCREMENT,
+hora_pedido timestamp not null,
+entrega enum('s','n'),
+valor_pedido float not null,
+primary key(lanche),
+primary key(usuario),
+foreign key(lanche)references lanches(
+codigoLanche),
+foreign key(usuario)references usuarios(
+codigo)
+)default charset=utf8;
+
+NAO CONSEGUI CRIAR ESTA TABELA!
+
+*****************************************
+
+INSERT INTO usuarios VALUES('fulano','fulano@hotmail.com',123,'rua01','fun'),('beltrano','beltrano@hotmail.com',123,'rua02','usu'),('ciclano','ciclano@hotmail.com',123,'rua03','usu'),('adm','souadm@hotmail.com',123,'rua03','adm'),('zezinho','zezinho@hotmail.com',123,'rua015','usu'),('maria','maria@hotmail.com',123,'rua013','usu');
+INSERT INTO categorias VALUES('cachorros'),('baurus'),('pizzas');

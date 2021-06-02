@@ -1,0 +1,14 @@
+@media (min-width:0px) and (max-width:370px){
+
+   div.row{
+
+        flex-direction:column;
+   }
+
+   div.row div.card{
+
+        min-width:90vw;
+        max-width:90vw;
+   }
+
+}

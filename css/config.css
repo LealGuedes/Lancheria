@@ -1,0 +1,9 @@
+:root{
+
+    --bg-menu-principal:rgba(255,69,0,0.9);
+    --barra-titulos:rgba(255,69,0,0.9);
+    --efeito-hover-buttons:rgba(255,0,0,0.8);
+    --efeito-hover-btn-alterar:rgba(255,140,0);
+    --efeito-hover-iten-menu-principal:rgba(255,69,0,0.8);
+    font-family: "Roboto",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+}
